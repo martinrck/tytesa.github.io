@@ -44,21 +44,130 @@ body {
 }
 
 /* =========================================
-   2. LOADER
+   2. LOADER "TECH TURBINE" (CORREGIDO)
    ========================================= */
 #loader-wrapper {
     position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    background-color: #121212; z-index: 9999;
+    background-color: #0a0a0a; /* Fondo muy oscuro industrial */
+    z-index: 9999;
     display: flex; justify-content: center; align-items: center;
-    transition: opacity 0.5s ease-out;
+    transition: opacity 0.6s ease-out, visibility 0.6s;
+    padding: 20px; /* Evita que el contenido toque los bordes en celular */
 }
-.loader-content { text-align: center; }
-.loader-icon { width: 80px; height: 80px; margin: 0 auto 20px; color: var(--accent); animation: pulse 2s infinite; }
-.loader-text .main { display: block; font-family: var(--font-head); font-size: 2.5rem; font-weight: 900; letter-spacing: 2px; color: #fff; }
-.loader-text .main .highlight { color: var(--accent); }
-.loader-text .sub { display: block; font-size: 0.9rem; color: #b3b3b3; letter-spacing: 3px; text-transform: uppercase; margin-top: 5px; }
-@keyframes pulse { 0% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.1); opacity: 0.8; } 100% { transform: scale(1); opacity: 1; } }
 
+.loader-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px; /* Espacio entre el logo y el texto */
+    width: 100%;
+}
+
+/* Contenedor de la animación gráfica */
+.tech-loader {
+    position: relative;
+    width: 100px; /* Tamaño ajustado para que no sea excesivo */
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Anillo Exterior */
+.ring-outer {
+    position: absolute;
+    width: 100%; height: 100%;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: var(--accent); /* Color amarillo */
+    border-left-color: rgba(255, 215, 0, 0.2);
+    animation: spin 1.5s linear infinite;
+}
+
+/* Anillo Interior (gira al revés) */
+.ring-inner {
+    position: absolute;
+    width: 70%; height: 70%;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-bottom-color: #fff; /* Color blanco */
+    border-right-color: rgba(255, 255, 255, 0.2);
+    animation: spin-reverse 2s linear infinite;
+}
+
+/* Icono Central */
+.loader-icon {
+    width: 35px; height: 35px;
+    color: var(--accent);
+    filter: drop-shadow(0 0 8px var(--accent)); /* Resplandor */
+    animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Textos */
+.loader-text {
+    text-align: center;
+    width: 100%; /* Asegura que ocupe el ancho disponible */
+    overflow: hidden; /* Evita desbordes si la animación se pasa */
+}
+
+.loader-text .main {
+    display: block;
+    font-family: var(--font-head);
+    font-size: 2.2rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: #fff;
+    opacity: 0;
+    line-height: 1.2;
+    animation: text-reveal 1s ease-out forwards 0.5s;
+}
+
+.loader-text .main .highlight { color: var(--accent); }
+
+.loader-text .sub {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--text-gray);
+    text-transform: uppercase;
+    margin-top: 8px;
+    text-align: center;
+    opacity: 0;
+    /* Ajustamos la animación para que sea sutil y no corte el texto */
+    animation: fade-up 1s ease-out forwards 0.8s;
+}
+
+/* --- KEYFRAMES DE ANIMACIÓN --- */
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes spin-reverse {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(-360deg); }
+}
+
+@keyframes pulse-glow {
+    0% { transform: scale(0.95); opacity: 0.8; filter: drop-shadow(0 0 5px var(--accent)); }
+    50% { transform: scale(1.05); opacity: 1; filter: drop-shadow(0 0 15px var(--accent)); }
+    100% { transform: scale(0.95); opacity: 0.8; filter: drop-shadow(0 0 5px var(--accent)); }
+}
+
+/* Animación de entrada para el título principal */
+@keyframes text-reveal {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Animación simple para el subtítulo (evita problemas de espaciado) */
+@keyframes fade-up {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Ajustes necesarios para que el JS oculte el loader */
 .view-section { display: none; width: 100%; animation: fadeIn 0.5s ease-in-out; flex: 1; }
 .active-view { display: block; }
 @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
