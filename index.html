@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TYTESA - Energia y Automatización</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="loader-wrapper">
+        <div class="loader-content">
+            <div class="logo-icon-container loader-icon">
+                <svg class="logo-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+            </div>
+            <div class="loader-text">
+                <span class="main">TYTE<span class="highlight">SA</span></span>
+                <span class="sub" data-i18n="subtitle">Energía y Automatización</span>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <a href="#" class="logo" onclick="switchView('inicio')">
+            <div class="logo-icon-container">
+                <svg class="logo-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+            </div>
+            <div class="logo-text-wrapper">
+                <span class="logo-text">TYTE<span class="highlight">SA</span></span>
+                <span class="logo-subtitle" data-i18n="subtitle">Energía y Automatización</span>
+            </div>
+        </a>
+
+        <ul class="nav-links">
+            <li><a href="#" onclick="switchView('inicio')" class="nav-btn" data-i18n="nav_home">Inicio</a></li>
+            <li><a href="#" onclick="switchView('nosotros')" class="nav-btn" data-i18n="nav_about">Sobre Nosotros</a></li>
+            
+            <li class="dropdown-item">
+                <a href="#" class="dropbtn" onclick="switchView('servicios-hub')"><span data-i18n="nav_services">Servicios</span> ▾</a>
+                <div class="dropdown-content">
+                    <a href="#" onclick="switchView('detalle-ingenieria')" data-i18n="srv_eng">Ingeniería y Automatización</a>
+                    <a href="#" onclick="switchView('detalle-cuadros')" data-i18n="srv_panels">Fabricación y Montaje de Cuadros</a>
+                    <a href="#" onclick="switchView('detalle-obras')" data-i18n="srv_projects">Obras y Proyectos</a>
+                    <a href="#" onclick="switchView('detalle-mantenimiento')" data-i18n="srv_maintenance">Mantenimiento</a>
+                </div>
+            </li>
+
+            <li><a href="#" class="btn-contact" onclick="switchView('contacto')" data-i18n="nav_contact">Contáctanos</a></li>
+        </ul>
+
+        <div class="controls-wrapper">
+            <div class="lang-switch">
+                <button onclick="changeLanguage('es')" class="lang-btn active" title="Español">🇪🇸</button>
+                <button onclick="changeLanguage('en')" class="lang-btn" title="English">🇬🇧</button>
+            </div>
+
+            <div class="theme-switch-wrapper">
+                <label class="theme-switch" for="checkbox">
+                    <input type="checkbox" id="checkbox" />
+                    <div class="slider round">
+                        <div class="icon-sun">☀️</div>
+                        <div class="icon-moon">🌙</div>
+                    </div>
+                </label>
+            </div>
+        </div>
+
+        <div class="hamburger"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
+    </nav>
+
+    <div id="inicio" class="view-section active-view">
+        <header class="hero-carousel">
+            <div class="carousel-container">
+                <div class="slide active">
+                    <div class="overlay"></div>
+                    <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1920&q=80" alt="Tableros">
+                    <div class="slide-content">
+                        <span class="tagline" data-i18n="hero1_tag">Ingeniería de Precisión</span>
+                        <h1 data-i18n="hero1_title">SOLUCIONES <br> ELÉCTRICAS</h1>
+                        <p data-i18n="hero1_desc">Líderes en montaje industrial y media tensión.</p>
+                        <button onclick="switchView('servicios-hub')" class="cta-button" data-i18n="hero1_btn">Ver Soluciones</button>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="overlay"></div>
+                    <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1920&q=80" alt="Alta Tensión">
+                    <div class="slide-content">
+                        <span class="tagline" data-i18n="hero2_tag">Infraestructura Crítica</span>
+                        <h1 data-i18n="hero2_title">POTENCIA Y <br> SEGURIDAD</h1>
+                        <p data-i18n="hero2_desc">Proyectos llave en mano para grandes industrias.</p>
+                        <button onclick="switchView('detalle-obras')" class="cta-button" data-i18n="hero2_btn">Nuestros Proyectos</button>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="overlay"></div>
+                    <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=1920&q=80" alt="Automatización">
+                    <div class="slide-content">
+                        <span class="tagline" data-i18n="hero3_tag">Industria 4.0</span>
+                        <h1 data-i18n="hero3_title">CONTROL <br> INTELIGENTE</h1>
+                        <p data-i18n="hero3_desc">Automatización y sistemas SCADA de última generación.</p>
+                        <button onclick="switchView('detalle-ingenieria')" class="cta-button" data-i18n="hero3_btn">Ver Tecnología</button>
+                    </div>
+                </div>
+                <button class="prev-btn" onclick="moveSlide(-1)">❮</button>
+                <button class="next-btn" onclick="moveSlide(1)">❯</button>
+            </div>
+        </header>
+    </div>
+
+    <div id="nosotros" class="view-section">
+        <div class="about-container">
+            <div class="module-header">
+                <span class="module-tag" data-i18n="about_tag">Trayectoria y Excelencia</span>
+                <h2><span data-i18n="about_title">SOBRE</span> <span class="highlight" data-i18n="about_title_span">NOSOTROS</span></h2>
+                <div class="separator"></div>
+            </div>
+            <div class="about-content">
+                <div class="about-text-highlight">
+                    <p data-i18n="about_highlight">"TYTESA es una empresa desarrollada en 2007. Nos avalan más de 15 años de experiencia en el rubro energía y automatización industrial."</p>
+                </div>
+                <div class="about-text-columns">
+                    <p data-i18n="about_p1">Nuestra presencia en <strong>Argentina y España</strong> es una muestra de nuestro esfuerzo, crecimiento y desarrollo. Hoy, TYTESA es una empresa de servicios consolidada. Nuestro sostén es un grupo de técnicos especializados y distribuidos en nuestras oficinas y talleres en Madrid y Buenos Aires.</p>
+                    <p data-i18n="about_p2">Nuestro know-how en control y distribución de energía nos permite integrarnos a proveedores de reconocimiento global para ofrecer una amplia demanda de servicios de manera autónoma fuertemente orientada a la industria. Nuestra cartera de clientes es sólida y reconocida, atendiendo sus necesidades mediante proyectos llave en mano, obras, montajes y mantenimiento.</p>
+                </div>
+            </div>
+            <div class="founder-section">
+                <h3 class="founder-title" data-i18n="founder_title">LIDERAZGO</h3>
+                <div class="founder-card">
+                    <div class="founder-image-full">
+                        <img src="sebastian-sotelo-ceo-tytesa-768x864.jpg" alt="Sebastián Sotelo" class="founder-portrait-full">
+                    </div>
+                    <div class="founder-info">
+                        <h2>Sebastián Sotelo</h2>
+                        <span class="founder-role" data-i18n="founder_role">Director General</span>
+                        <div class="founder-location"><span class="flag">🇦🇷</span> <span class="flag">🇪🇸</span> 1976 – Buenos Aires, Argentina</div>
+                        <p class="founder-bio" data-i18n="founder_bio">Fundador y actual Director General de TYTESA Argentina y TYTESA España.</p>
+                        <ul class="founder-education">
+                            <li><span class="edu-year">1995</span><div class="edu-detail"><strong data-i18n="edu_1_title">Técnico Eléctrico</strong><span data-i18n="edu_1_inst">Instituto Tecnológico San Bonifacio (ARG)</span></div></li>
+                            <li><span class="edu-year">2004</span><div class="edu-detail"><strong data-i18n="edu_2_title">Licenciado en Comercialización</strong><span data-i18n="edu_2_inst">Universidad Abierta Interamericana (ARG)</span></div></li>
+                            <li><span class="edu-year">2017</span><div class="edu-detail"><strong>DPME</strong><span>IAE Business School (ARG)</span></div></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="servicios-hub" class="view-section">
+        <div class="hub-container">
+            <div class="module-header">
+                <span class="module-tag" data-i18n="hub_tag">Catálogo de Soluciones</span>
+                <h2><span data-i18n="hub_title">NUESTROS</span> <span class="highlight" data-i18n="hub_title_span">SERVICIOS</span></h2>
+                <div class="separator"></div>
+                <p class="module-desc" data-i18n="hub_desc">Seleccione una categoría para acceder a la especificación técnica, galerías y detalles operativos.</p>
+            </div>
+            <div class="hub-grid-large">
+                <div class="hub-poster" style="background-image: url('https://images.unsplash.com/photo-1580927752452-89d86da3fa0a?auto=format&fit=crop&w=1000&q=80');" onclick="switchView('detalle-ingenieria')">
+                    <div class="poster-overlay"></div>
+                    <div class="poster-content">
+                        <div class="poster-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a10 10 0 1 0 10 10H12V2z" /><path d="M12 12L2.5 10.5" /></svg></div>
+                        <h3 data-i18n="srv_eng">Ingeniería y Automatización</h3>
+                        <p data-i18n="hub_eng_desc">Análisis y relevamiento. Diseño y desarrollo de ingeniería de soluciones en energía y automatización. Programación de PLC, HMI y SCADA.</p>
+                        <span class="poster-cta" data-i18n="hub_cta">Acceder al Módulo →</span>
+                    </div>
+                </div>
+                <div class="hub-poster" style="background-image: url('https://images.unsplash.com/photo-1621905252507-b35492cc253e?auto=format&fit=crop&w=1000&q=80');" onclick="switchView('detalle-cuadros')">
+                    <div class="poster-overlay"></div>
+                    <div class="poster-content">
+                        <div class="poster-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="2" width="16" height="20" rx="2" /><line x1="12" y1="2" x2="12" y2="22" /><path d="M7 12h2" /><path d="M7 16h2" /></svg></div>
+                        <h3 data-i18n="srv_panels">Fabricación y Montaje de Cuadros</h3>
+                        <p data-i18n="hub_panels_desc">Montaje de cuadros de energía y control. CGBT, CCM y cuadros seccionales de distribución. Talleres propios en Argentina y España.</p>
+                        <span class="poster-cta" data-i18n="hub_cta">Acceder al Módulo →</span>
+                    </div>
+                </div>
+                <div class="hub-poster" style="background-image: url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1000&q=80');" onclick="switchView('detalle-obras')">
+                    <div class="poster-overlay"></div>
+                    <div class="poster-content">
+                        <div class="poster-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /><polyline points="14 2 14 8 20 8" /></svg></div>
+                        <h3 data-i18n="srv_projects">Obras y Proyectos</h3>
+                        <p data-i18n="hub_projects_desc">Soluciones llave en mano. Integración de cuadros, tecnologías y sistemas de producción. Servicios de montajes eléctricos y electromecánicos.</p>
+                        <span class="poster-cta" data-i18n="hub_cta">Acceder al Módulo →</span>
+                    </div>
+                </div>
+                <div class="hub-poster" style="background-image: url('https://images.unsplash.com/photo-1621905251918-48416bd8575a?auto=format&fit=crop&w=1000&q=80');" onclick="switchView('detalle-mantenimiento')">
+                    <div class="poster-overlay"></div>
+                    <div class="poster-content">
+                        <div class="poster-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" /></svg></div>
+                        <h3 data-i18n="srv_maintenance">Servicios de Mantenimiento</h3>
+                        <p data-i18n="hub_maint_desc">Mantenimiento preventivo y correctivo. Termografías y contratos de externalización para asegurar la continuidad operativa.</p>
+                        <span class="poster-cta" data-i18n="hub_cta">Acceder al Módulo →</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="detalle-ingenieria" class="view-section detail-view">
+        <button onclick="switchView('servicios-hub')" class="back-btn" data-i18n="back_btn">← Volver al Menú</button>
+        <div class="module-header">
+            <h2><span data-i18n="eng_title_1">INGENIERÍA Y</span> <span class="highlight" data-i18n="eng_title_2">AUTOMATIZACIÓN</span></h2>
+            <div class="separator"></div>
+            <p class="module-desc" data-i18n="eng_desc">Desarrollo integral de la inteligencia operativa de su planta.</p>
+        </div>
+        <div class="tech-layout">
+            <div class="tech-list-column">
+                <h3 class="tech-title" data-i18n="tech_details">Detalles Técnicos</h3>
+                <div class="tech-card"><div class="tech-icon">⚡</div><div class="tech-info"><h4 data-i18n="eng_card1_title">Programación de PLCs</h4><p data-i18n="eng_card1_text">Siemens, Allen Bradley, Schneider.</p></div></div>
+                <div class="tech-card"><div class="tech-icon">🖥️</div><div class="tech-info"><h4 data-i18n="eng_card2_title">Sistemas HMI y SCADA</h4><p data-i18n="eng_card2_text">Interfaz hombre-máquina y monitoreo.</p></div></div>
+                <div class="tech-card"><div class="tech-icon">🔄</div><div class="tech-info"><h4 data-i18n="eng_card3_title">Migración de Sistemas</h4><p data-i18n="eng_card3_text">Actualización de hardware obsoleto.</p></div></div>
+                <div class="tech-card"><div class="tech-icon">📡</div><div class="tech-info"><h4 data-i18n="eng_card4_title">Telemetría y Control</h4><p data-i18n="eng_card4_text">Operación remota y adquisición de datos.</p></div></div>
+            </div>
+            <div class="tech-gallery-column">
+                <div class="tech-img-main"><img src="https://images.unsplash.com/photo-1555664424-778a1e5e1b48?auto=format&fit=crop&w=800&q=80" alt="Programación PLC"></div>
+                <div class="tech-img-secondary">
+                    <img src="https://images.unsplash.com/photo-1565514020175-950029966bf5?auto=format&fit=crop&w=600&q=80" alt="Brazo Robótico">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80" alt="Monitoreo SCADA">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="detalle-cuadros" class="view-section detail-view">
+        <button onclick="switchView('servicios-hub')" class="back-btn" data-i18n="back_btn">← Volver al Menú</button>
+        <div class="module-header">
+            <h2><span data-i18n="pan_title_1">FABRICACIÓN Y MONTAJE DE</span> <span class="highlight" data-i18n="pan_title_2">CUADROS</span></h2>
+            <div class="separator"></div>
+            <p class="module-desc" data-i18n="pan_desc">Certificación y calidad en cada tablero ensamblado en nuestros talleres propios.</p>
+        </div>
+        <div class="tech-layout">
+            <div class="tech-list-column">
+                <h3 class="tech-title" data-i18n="pan_types">Tipos de Tableros</h3>
+                <div class="tech-card"><div class="tech-icon">⚡</div><div class="tech-info"><h4>TGBT</h4><p data-i18n="pan_card1_text">Tableros Generales de Baja Tensión de alta potencia.</p></div></div>
+                <div class="tech-card"><div class="tech-icon">⚙️</div><div class="tech-info"><h4>CCM</h4><p data-i18n="pan_card2_text">Centros de Control de Motores fijos y extraíbles.</p></div></div>
+                <div class="tech-card"><div class="tech-icon">🔋</div><div class="tech-info"><h4 data-i18n="pan_card3_title">Bancos de Capacitores</h4><p data-i18n="pan_card3_text">Corrección de factor de potencia automáticos.</p></div></div>
+                <div class="tech-card"><div class="tech-icon">💡</div><div class="tech-info"><h4 data-i18n="pan_card4_title">Seccionales</h4><p data-i18n="pan_card4_text">Tableros de iluminación y distribución secundaria.</p></div></div>
+            </div>
+            <div class="tech-gallery-column">
+                <div class="tech-img-main"><img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=800&q=80" alt="Tablero Industrial"></div>
+                <div class="tech-img-secondary">
+                    <img src="https://images.unsplash.com/photo-1498084393753-b411b2d26b34?auto=format&fit=crop&w=600&q=80" alt="Cableado Detalle">
+                    <img src="https://images.unsplash.com/photo-1581092335397-9583eb92d232?auto=format&fit=crop&w=600&q=80" alt="Componentes Eléctricos">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="detalle-obras" class="view-section detail-view">
+        <button onclick="switchView('servicios-hub')" class="back-btn" data-i18n="back_btn">← Volver al Menú</button>
+        <div class="module-header">
+            <h2><span data-i18n="proj_title_1">OBRAS Y</span> <span class="highlight" data-i18n="proj_title_2">PROYECTOS</span></h2>
+            <div class="separator"></div>
+            <p class="module-desc" data-i18n="proj_desc">Ejecución llave en mano de grandes obras de infraestructura industrial.</p>
+        </div>
+        <div class="tech-layout">
+            <div class="tech-list-column">
+                <h3 class="tech-title" data-i18n="proj_scope">Alcance del Servicio</h3>
+                <div class="tech-card"><div class="tech-icon">🏗️</div><div class="tech-info"><h4 data-i18n="proj_card1_title">Montajes</h4><p data-i18n="proj_card1_text">Bandejas portacables, cañerías y soportería.</p></div></div>
+                <div class="tech-card"><div class="tech-icon">🔌</div><div class="tech-info"><h4 data-i18n="proj_card2_title">Tendidos Eléctricos</h4><p data-i18n="proj_card2_text">Cables de potencia y comando de gran calibre.</p></div></div>
+                <div class="tech-card"><div class="tech-icon">💡</div><div class="tech-info"><h4 data-i18n="proj_card3_title">Iluminación Industrial</h4><p data-i18n="proj_card3_text">Proyectos lumínicos LED para naves y plantas.</p></div></div>
+                <div class="tech-card"><div class="tech-icon">⚡</div><div class="tech-info"><h4 data-i18n="proj_card4_title">Protección</h4><p data-i18n="proj_card4_text">Sistemas de pararrayos y Puesta a Tierra (PAT).</p></div></div>
+            </div>
+            <div class="tech-gallery-column">
+                <div class="tech-img-main"><img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=800&q=80" alt="Obra en Construcción"></div>
+                <div class="tech-img-secondary">
+                    <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=600&q=80" alt="Arquitectura Industrial">
+                    <img src="https://images.unsplash.com/photo-1590247813693-5541d1c609fd?auto=format&fit=crop&w=600&q=80" alt="Ingenieros en Obra">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="detalle-mantenimiento" class="view-section detail-view">
+        <button onclick="switchView('servicios-hub')" class="back-btn" data-i18n="back_btn">← Volver al Menú</button>
+        <div class="module-header">
+            <h2><span data-i18n="main_title_1">SERVICIO DE</span> <span class="highlight" data-i18n="main_title_2">MANTENIMIENTO</span></h2>
+            <div class="separator"></div>
+            <p class="module-desc" data-i18n="main_desc">Aseguramos la máxima disponibilidad de sus activos eléctricos.</p>
+        </div>
+        <div class="tech-layout">
+            <div class="tech-list-column">
+                <h3 class="tech-title" data-i18n="main_specs">Servicios Especializados</h3>
+                <div class="tech-card"><div class="tech-icon">🌡️</div><div class="tech-info"><h4 data-i18n="main_card1_title">Termografías</h4><p data-i18n="main_card1_text">Detección de puntos calientes mediante infrarrojo.</p></div></div>
+                <div class="tech-card"><div class="tech-icon">📉</div><div class="tech-info"><h4 data-i18n="main_card2_title">Calidad de Energía</h4><p data-i18n="main_card2_text">Análisis de redes y armónicos.</p></div></div>
+                <div class="tech-card"><div class="tech-icon">🚨</div><div class="tech-info"><h4 data-i18n="main_card3_title">Guardia 24/7</h4><p data-i18n="main_card3_text">Respuesta inmediata ante emergencias técnicas.</p></div></div>
+                <div class="tech-card"><div class="tech-icon">📏</div><div class="tech-info"><h4 data-i18n="main_card4_title">Mediciones SRT</h4><p data-i18n="main_card4_text">Protocolos de puesta a tierra certificados.</p></div></div>
+            </div>
+            <div class="tech-gallery-column">
+                <div class="tech-img-main"><img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80" alt="Ingeniero de Mantenimiento"></div>
+                <div class="tech-img-secondary">
+                    <img src="https://images.unsplash.com/photo-1581094288338-2314dddb7ece?auto=format&fit=crop&w=600&q=80" alt="Reparación Técnica">
+                    <img src="https://images.unsplash.com/photo-1517420704952-d9f39714a6d4?auto=format&fit=crop&w=600&q=80" alt="Medición Eléctrica">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="contacto" class="view-section">
+        <div class="module-header">
+            <span class="module-tag" data-i18n="contact_tag">Presencia Global</span>
+            <h2><span data-i18n="contact_title">CONTACTO</span> <span class="highlight" data-i18n="contact_title_span">INTERNACIONAL</span></h2>
+            <div class="separator"></div>
+            <p class="module-desc" data-i18n="contact_desc">Seleccione la sede más cercana o envíenos su consulta directa.</p>
+        </div>
+        <div class="contact-container">
+            <div class="locations-column">
+                <div class="location-card">
+                    <div class="loc-header"><span class="flag-icon">🇦🇷</span> <h3 data-i18n="country_arg">ARGENTINA</h3></div>
+                    <div class="loc-details">
+                        <p><strong>📍</strong> Av. Tomás Espora 2517 PB, CP:1852<br>Burzaco, Bs As.</p>
+                        <p><strong>📞</strong> +54 11 4299-7833</p>
+                        <p><strong>✉️</strong> info@tytesa.com.ar</p>
+                    </div>
+                    <div class="map-wrapper"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3276.539823528859!2d-58.39708782417937!3d-34.80916056749961!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcd30fd1b1e989%3A0x6b6d5b0a7b0b6b0!2sAv.%20Tom%C3%A1s%20Espora%202517%2C%20Burzaco%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1700000000000!5m2!1ses-419!2sar" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe></div>
+                </div>
+                <div class="location-card">
+                    <div class="loc-header"><span class="flag-icon">🇪🇸</span> <h3 data-i18n="country_esp">ESPAÑA</h3></div>
+                    <div class="loc-details">
+                        <p><strong>📍</strong> C. Valgrande, 20, Nave 7<br>28108 Alcobendas, Madrid</p>
+                        <p><strong>📞</strong> +34 914 25 35 52</p>
+                        <p><strong>✉️</strong> info@tytesa.com</p>
+                    </div>
+                    <div class="map-wrapper"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3032.535049363539!2d-3.655866684601968!3d40.53697997935147!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd422bd2f4b5b5b5%3A0x1b1b1b1b1b1b1b1b!2sC.%20Valgrande%2C%2020%2C%2028108%20Alcobendas%2C%20Madrid%2C%20Espa%C3%B1a!5e0!3m2!1ses-419!2sar!4v1700000000000!5m2!1ses-419!2sar" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe></div>
+                </div>
+            </div>
+            <div class="contact-form-wrapper">
+                <form class="contact-form" action="https://formspree.io/f/xnjjkooa" method="POST">
+                    <div class="form-title"><h3 data-i18n="form_title">Envíenos un mensaje</h3><p data-i18n="form_subtitle">Responderemos en menos de 24hs.</p></div>
+                    <div class="form-group"><input type="text" id="nombre" name="nombre" required placeholder=" "><label for="nombre" data-i18n="form_name">Nombre y Apellido</label></div>
+                    <div class="form-group"><input type="text" id="empresa" name="empresa" required placeholder=" "><label for="empresa" data-i18n="form_company">Empresa</label></div>
+                    <div class="form-group"><input type="email" id="email" name="email" required placeholder=" "><label for="email" data-i18n="form_email">Correo Electrónico</label></div>
+                    <div class="form-group"><input type="tel" id="telefono" name="telefono" required placeholder=" "><label for="telefono" data-i18n="form_phone">Teléfono</label></div>
+                    <div class="form-group"><input type="text" id="asunto" name="asunto" required placeholder=" "><label for="asunto" data-i18n="form_subject">Asunto</label></div>
+                    <div class="form-group"><textarea id="mensaje" name="mensaje" required placeholder=" " rows="4"></textarea><label for="mensaje" data-i18n="form_message">Mensaje</label></div>
+                    <button type="submit" class="cta-button" style="width: 100%; border-radius: 0;" data-i18n="form_btn">Enviar Mensaje</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer style="background:#000; padding:15px; text-align:center; color:gray; border-top: 2px solid #FFD700; margin-top: auto;">
+        <p data-i18n="footer_text">© 2026 TYTESA - Energia y Automatización.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
