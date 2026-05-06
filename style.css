@@ -246,7 +246,7 @@ input:checked + .slider:before { transform: translateX(24px); }
 /* =========================================
    4. HERO CAROUSEL
    ========================================= */
-.hero-carousel { position: relative; height: calc(100vh - 85px); width: 100%; overflow: hidden; background-color: #000; }
+.hero-carousel { position: relative; height: calc(100vh - 146px); width: 100%; overflow: hidden; background-color: #000; }
 .carousel-container { height: 100%; width: 100%; position: relative; }
 .slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 0.8s ease-in-out; display: flex; align-items: center; justify-content: flex-start; z-index: 0; }
 .slide.active { opacity: 1; z-index: 1; }
